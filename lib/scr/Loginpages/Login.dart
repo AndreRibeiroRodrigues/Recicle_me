@@ -15,7 +15,6 @@ class LoginCadastro extends StatelessWidget {
 
       body: Center(
         child: Row(
-          
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
@@ -28,27 +27,30 @@ class LoginCadastro extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsetsGeometry.fromLTRB(10, 0, 10, 0),
                   child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      decoration: getAuthenticationDecoration("E-mail")
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Senha'
-                        ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Rewardpage())
-                        );
-                      }, 
-                      child: Text('Entrar'),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                        decoration: getAuthenticationDecoration("E-mail"),
                       ),
-                  ],
-                ),)
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Senha'),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Rewardpage(),
+                            ),
+                          );
+                        },
+                        child: Text('Entrar'),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
             Container(
@@ -62,24 +64,17 @@ class LoginCadastro extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Email'
-                        ),
+                      decoration: InputDecoration(labelText: 'Email'),
                     ),
                     TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Senha'
-                        ),
+                      decoration: InputDecoration(labelText: 'Senha'),
                     ),
-                    ElevatedButton(
-                      onPressed: () {}, 
-                      child: Text('Entrar'),
-                      ),
+                    ElevatedButton(onPressed: () {}, child: Text('Entrar')),
                   ],
                 ),
               ),
             ),
-          ],  
+          ],
         ),
       ),
     );
