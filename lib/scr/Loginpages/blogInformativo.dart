@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recicle_me/components/AppbarSimple.dart';
+import 'package:recicle_me/components/DrawerSimple.dart';
 
 class Bloginformativo extends StatelessWidget {
   const Bloginformativo({super.key});
@@ -6,10 +8,8 @@ class Bloginformativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        title: const Text('Blog Informativo'),
-        backgroundColor: const Color(0xff1C9328),
-      ),
+      appBar: getAppBarSimple(context, 'Blog Informativo'),
+      drawer: getDrawerSimple(context),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(

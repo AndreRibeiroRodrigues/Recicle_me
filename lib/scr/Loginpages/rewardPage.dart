@@ -119,21 +119,22 @@ class _RewardpageState extends State<Rewardpage> {
                           ],
                         ),
                       ),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.05),
                     ],
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 16),
             // Grid de recompensas
             Padding(
               padding: const EdgeInsets.all(100),
               child: GridView.count(
-                crossAxisCount: 4,
+                crossAxisCount: MediaQuery.of(context).size.width < 1000 ? 1 : 3,
+                crossAxisSpacing: 16,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
+                
                 childAspectRatio: 0.95,
                 children: [
                   RewardCard(

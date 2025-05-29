@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recicle_me/scr/Loginpages/Dashboard.dart';
+import 'package:recicle_me/scr/Loginpages/blogInformativo.dart';
 import 'package:recicle_me/scr/Loginpages/rewardPage.dart';
 
 Drawer getDrawerSimple(BuildContext context) {
@@ -40,6 +41,17 @@ Drawer getDrawerSimple(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const Rewardpage()),
+            );
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.redeem, color: Colors.white),
+          title: Text('Blog Informativo', style: TextStyle(color: Colors.white)),
+          onTap: () {
+            // Action for rewards
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Bloginformativo()),
             );
           },
         ),
