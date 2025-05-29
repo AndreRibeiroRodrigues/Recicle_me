@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recicle_me/scr/Loginpages/Dashboard.dart';
+import 'package:recicle_me/scr/Loginpages/rewardPage.dart';
 
 Drawer getDrawerSimple(BuildContext context) {
   return Drawer(
@@ -22,9 +24,23 @@ Drawer getDrawerSimple(BuildContext context) {
         ),
         ListTile(
           leading: Icon(Icons.redeem, color: Colors.white),
+          title: Text('Dashboard', style: TextStyle(color: Colors.white)),
+          onTap: () {
+            // Action for dashboard
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context) => const Dashboard())
+            );
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.redeem, color: Colors.white),
           title: Text('Recompensas', style: TextStyle(color: Colors.white)),
           onTap: () {
             // Action for rewards
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Rewardpage()),
+            );
           },
         ),
         ListTile(

@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:recicle_me/scr/Loginpages/rewardPage.dart';
 import 'package:recicle_me/scr/homePage.dart';
 
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Homepage(),
+      home: const Rewardpage(),
     );
   }
 }

@@ -5,6 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chrome with Hot Reload",
+            "request": "launch",
+            "command": "flutter run -d chrome --web-experimental-hot-reload"
+        },
+                {
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",

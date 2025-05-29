@@ -11,30 +11,48 @@ class LoginCadastro extends StatelessWidget {
     final CadastroForm = GlobalKey<FormState>();
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Login e Cadastro',
+          textAlign: TextAlign.center,
+        ),
+        backgroundColor: const Color(0xff1C9328),
+      ),
       backgroundColor: Color(0xff1C9328),
-
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            //Login
             Container(
               color: Color.fromARGB(255, 2, 119, 14),
               width: 600,
               height: 600,
               //Login
-              child: Form(
-                key: LoginForm,
-                child: Padding(
-                  padding: EdgeInsetsGeometry.fromLTRB(10, 0, 10, 0),
+              child: Padding(
+                padding: EdgeInsetsGeometry.fromLTRB(10, 0, 10, 0),
+                child: Form(
+                  key: LoginForm,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Text(
+                        'Login',
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
                       TextFormField(
                         decoration: getAuthenticationDecoration("E-mail"),
                       ),
                       SizedBox(height: 20),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Senha'),
+                        decoration: getAuthenticationDecoration("Senha"),
                       ),
                       SizedBox(height: 20),
                       ElevatedButton(
@@ -53,24 +71,51 @@ class LoginCadastro extends StatelessWidget {
                 ),
               ),
             ),
+            //Cadastro
             Container(
               color: Color.fromARGB(255, 2, 119, 14),
               width: 600,
               height: 600,
               //Cadastro
-              child: Form(
-                key: CadastroForm,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(labelText: 'Email'),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(labelText: 'Senha'),
-                    ),
-                    ElevatedButton(onPressed: () {}, child: Text('Entrar')),
-                  ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Form(
+                  key: CadastroForm,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Cadastro',
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: getAuthenticationDecoration("nome"),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: getAuthenticationDecoration('E-mail'),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: getAuthenticationDecoration("Confirmar E-mail"),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: getAuthenticationDecoration('Senha'),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: getAuthenticationDecoration("Confirmar senha"),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(onPressed: () {}, child: Text('Entrar')),
+                    ],
+                  ),
                 ),
               ),
             ),

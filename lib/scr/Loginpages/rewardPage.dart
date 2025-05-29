@@ -24,23 +24,27 @@ class _RewardpageState extends State<Rewardpage> {
             Container(
               color: Colors.green[700],
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Saudação e nível
-                  Text(
-                    'Ola, Usuario',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Column(
+                    children: [
+                      Text(
+                        'Ola, Usuario',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Nível 1',
+                        style: TextStyle(color: Colors.white70, fontSize: 16),
+                      ),
+                    ],
                   ),
-                  Text(
-                    'Nível 1',
-                    style: TextStyle(color: Colors.white70, fontSize: 16),
-                  ),
-                  const SizedBox(height: 12),
                   Row(
                     children: [
                       // Pontos Disponíveis
@@ -57,20 +61,24 @@ class _RewardpageState extends State<Rewardpage> {
                           children: [
                             Icon(Icons.emoji_events, color: Colors.yellow[700]),
                             SizedBox(width: 6),
-                            Text(
-                              'Pontos Disponíveis\n',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                            Text(
-                              '149 pts',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
+                            Column(
+                              children: [
+                                Text(
+                                  'Pontos Disponíveis\n',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                Text(
+                                  '149 pts',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -119,9 +127,9 @@ class _RewardpageState extends State<Rewardpage> {
             const SizedBox(height: 16),
             // Grid de recompensas
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.all(100),
               child: GridView.count(
-                crossAxisCount: 2,
+                crossAxisCount: 4,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 mainAxisSpacing: 16,
@@ -129,25 +137,43 @@ class _RewardpageState extends State<Rewardpage> {
                 childAspectRatio: 0.95,
                 children: [
                   RewardCard(
-                    image: 'assets/caneca.pngh',
+                    image: 'assets/images/Camisa.jpeg',
                     points: 100,
                     title: 'Caneca Personalizada',
+                    onTap: () {
+                      // Ação ao clicar na recompensa
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Recompensa selecionada!')),
+                      );
+                    },
                   ),
                   RewardCard(
-                    image: 'assets/camisa.png',
+                    image: 'assets/images/Caneca.jpeg',
                     points: 50,
                     title: 'Camisa Verde',
+                    onTap: () {
+                      // Ação ao clicar na recompensa
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Recompensa selecionada!')),
+                      );
+                    },
                   ),
                   RewardCard(
-                    image: 'assets/cupom.png',
+                    image: 'assets/images/Cupom.jpeg',
                     points: 500,
                     title: 'Cupom de 15% de Desconto',
+                    onTap: () {
+                      // Ação ao clicar na recompensa
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Recompensa selecionada!')),
+                      );
+                    },
                   ),
-                  RewardCard(
-                    image: 'assets/ovo.png',
-                    points: 200,
-                    title: 'Ovo de Páscoa',
-                  ),
+                  // RewardCard(
+                  //   image: 'assets/ovo.png',
+                  //   points: 200,
+                  //   title: 'Ovo de Páscoa',
+                  // ),
                 ],
               ),
             ),
