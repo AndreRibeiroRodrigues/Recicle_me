@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "342612937365",
+    "project_id": "recicleme-4b731",
+    "storage_bucket": "recicleme-4b731.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342612937365:android:c897699c7c0e62814b299c",
+        "android_client_info": {
+          "package_name": "com.example.recicle_me"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEEu7hwXG6qZiAqC9WV2yhv53ArBHxyjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
