@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:recicle_me/components/AppbarSimple.dart';
 import 'package:recicle_me/components/DrawerSimple.dart';
 import 'package:recicle_me/scr/Loginpages/blogInformativo.dart';
-import 'package:recicle_me/scr/Loginpages/rewardPage.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
