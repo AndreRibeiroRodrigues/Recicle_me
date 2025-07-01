@@ -44,17 +44,17 @@ Drawer getDrawerSimple(BuildContext context) {
             );
           },
         ),
-        ListTile(
-          leading: Icon(Icons.redeem, color: Colors.white),
-          title: Text('Blog Informativo', style: TextStyle(color: Colors.white)),
-          onTap: () {
-            // Action for rewards
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Bloginformativo()),
-            );
-          },
-        ),
+        // ListTile(
+        //   leading: Icon(Icons.redeem, color: Colors.white),
+        //   title: Text('Blog Informativo', style: TextStyle(color: Colors.white)),
+        //   onTap: () {
+        //     // Action for rewards
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const Bloginformativo()),
+        //     );
+        //   },
+        // ),
         ListTile(
           leading: Icon(Icons.settings, color: Colors.white),
           title: Text('Configurações', style: TextStyle(color: Colors.white)),

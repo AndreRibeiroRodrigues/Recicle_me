@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recicle_me/scr/Loginpages/Login.dart';
+import 'package:recicle_me/scr/Loginpages/LoginCadastroPage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -83,13 +83,14 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     width: 100),
                   Container(
-                    width: 100, 
-                    height: 100, color: Color(0xffffffff)),
+                    child: Image.asset('assets/images/th.jpg'),
+                    color: Color(0xffffffff)),
                   SizedBox(
                     width: 100),
                   Container(
-                    width: 100, 
-                    height: 100, 
+                    child: Image.asset('assets/images/6543.jpg'),
+                    width: 300, 
+                    height: 150, 
                     color: Color(0xffffffff)),
                 ]
               ),

@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recicle_me/components/AppbarSimple.dart';
 import 'package:recicle_me/components/DrawerSimple.dart';
@@ -11,6 +13,22 @@ class Rewardpage extends StatefulWidget {
 }
 
 class _RewardpageState extends State<Rewardpage> {
+  Future<String> buscarCampoUsuario() async {
+
+  DocumentSnapshot doc = await FirebaseFirestore.instance
+      .collection('usuarios')
+      .doc(FirebaseAuth.instance.currentUser?.uid)
+      .get();
+
+  if (doc.exists) {
+    // Supondo que você quer o campo 'nome'
+    String nome = doc.get('nome');
+    return await nome;
+  } else {
+    return 'Usuário não encontrado';
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +49,30 @@ class _RewardpageState extends State<Rewardpage> {
                   // Saudação e nível
                   Column(
                     children: [
-                      Text(
-                        'Ola, Usuario',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      FutureBuilder<String>(
+                        future: buscarCampoUsuario(), 
+                        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return Text(
+                              'Carregando...',
+                              style: TextStyle(color: Colors.white, fontSize: 22),
+                            );
+                          } else if (snapshot.hasError) {
+                            return Text(
+                              'Erro ao carregar nome',
+                              style: TextStyle(color: Colors.white, fontSize: 22),
+                            );
+                          } else {
+                            return Text(
+                              'Olá, ${snapshot.data}',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            );
+                          }
+                        },
                       ),
                       Text(
                         'Nível 1',
