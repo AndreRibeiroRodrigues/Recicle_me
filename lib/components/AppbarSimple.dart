@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recicle_me/scr/Loginpages/PerfilPage.dart';
+import 'package:recicle_me/scr/PerfilPage.dart';
 
 AppBar getAppBarSimple(BuildContext context, String title) {
   return AppBar(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recicle_me/scr/Loginpages/Dashboard.dart';
-import 'package:recicle_me/scr/Loginpages/blogInformativo.dart';
-import 'package:recicle_me/scr/Loginpages/rewardPage.dart';
+import 'package:recicle_me/scr/Dashboard.dart';
+import 'package:recicle_me/scr/rewardPage.dart';
 
 Drawer getDrawerSimple(BuildContext context) {
   return Drawer(

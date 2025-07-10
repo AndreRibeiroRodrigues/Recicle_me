@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recicle_me/scr/Loginpages/LoginCadastroPage.dart';
+import 'package:recicle_me/components/Textoebotao.dart';
+import 'package:recicle_me/components/homepageresponsi.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -11,6 +12,9 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+        final bool isLargeScreen = MediaQuery.of(context).size.width > 862;
+
+
     return Scaffold(
       backgroundColor: Color(0xff1C9328),
       appBar: AppBar(
@@ -23,117 +27,122 @@ class _HomepageState extends State<Homepage> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, '/login'), 
+          child: Text("Login/Cadastro"),
+          ),
+        ],
       ),
-      body: Container(
-        color: Color(0xff1C9328),
-        child: SingleChildScrollView(
-          child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 50),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Image.asset('assets/images/Logo.png',
-                  width: 400,
-                  height: 350,
-                  ),
-                  Column(
-                    children: [
-                      Text('Recicle, ganhe recompensas \ne ajude o planeta',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Color(0xffffffff),
-                        ),
-                      ),
-                      Row(
+      body: SingleChildScrollView(
+        child: Container(
+      
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF2E7D32), Color(0xFF388E3C)], // Tons de verde
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+            child: isLargeScreen
+                ? Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          ElevatedButton(
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginCadastro())
-                            ), 
-                            child: Text('Começar Agora'),
-                            ),
-                          // SizedBox(
-                          //   width: 20
-                          // ),
-                          // ElevatedButton(
-                          //   onPressed: (){}, 
-                          //   child: Text('saiba mais'),
-                          //   )
+                          Image.asset(
+                            'assets/images/Logo.png',
+                            width: 300,
+                            height: 300,
+                          ),
+                          const SizedBox(width: 40),
+                          TextoEBotao(context),
                         ],
-                      )
-                    ],
+                      ),
+                          imagens(context, isLargeScreen),
+                          Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Text(
+                              'Como Funciona',
+                              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            '1. Descarte Consciente: Leve seus materiais recicláveis (como papel, plástico, vidro e metal) aos nossos postos de coleta parceiros.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '2. Acúmulo de Pontos: Ao depositar seus itens recicláveis, eles serão pesados e convertidos em pontos na sua conta.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '3. Resgate seus Prêmios: Com os pontos acumulados, você pode escolher entre uma variedade de recompensas incríveis, desde brindes como canecas e ecobags até descontos especiais em produtos e serviços de nossos parceiros.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ],
+                      ),
+                  )
+
+                  ],
+                )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/Logo.png',
+                        width: 180,
+                        height: 180,
+                      ),
+                      const SizedBox(height: 30),
+                    TextoEBotao(context),
+                    const SizedBox(height: 30),
+                    imagens(context, isLargeScreen),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Text(
+                              'Como Funciona',
+                              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            '1. Descarte Consciente: Leve seus materiais recicláveis (como papel, plástico, vidro e metal) aos nossos postos de coleta parceiros.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '2. Acúmulo de Pontos: Ao depositar seus itens recicláveis, eles serão pesados e convertidos em pontos na sua conta.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '3. Resgate seus Prêmios: Com os pontos acumulados, você pode escolher entre uma variedade de recompensas incríveis, desde brindes como canecas e ecobags até descontos especiais em produtos e serviços de nossos parceiros.',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ],
+                      ),
                   )
                 ],
-              ),
-            ),//
-            Padding(
-              padding: EdgeInsets.only(top:50),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                  children: [
-                  Image.asset('assets/images/PostoDeColetaSeletiva.jpg',
-                  width: 250,
-                  height: 150,
                   ),
-                  SizedBox(
-                    width: 100),
-                  Container(
-                    child: Image.asset('assets/images/th.jpg'),
-                    color: Color(0xffffffff)),
-                  SizedBox(
-                    width: 100),
-                  Container(
-                    child: Image.asset('assets/images/6543.jpg'),
-                    width: 300, 
-                    height: 150, 
-                    color: Color(0xffffffff)),
-                ]
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(50,10,10,10),
-              child: Column(
-                children: [
-                  Text(
-                    'Como Funciona',
-                    style: TextStyle(
-                      fontSize: 30
-
-                    ),
-                  ),
-                  Text('''
-1. Desc arte Consciente: Leve seus materiais recicláveis (como papel, plástico, vidro e metal) aos nossos postos de coleta parceiros.
-2. Acúmulo de Pontos: Ao depositar s   eus itens recicláveis, eles serão pesados e convertidos em pontos na sua conta.
-3. Resgate seus Prêmios: Com os pontos acumulados, você pode escolher entre uma variedade de recompensas incríveis, desde brindes como canecas e ecobags até descontos especiais em produtos e serviços de nossos parceiros.
-    ''',
-                style: TextStyle(
-                    fontSize: 20
-                  ),
-                    ),
-                ],
-              ),
-            )
-          ],
-        ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        height: 50,
-         child: SizedBox(
-          height: 10.0,
-          child: Center(
-            child: Text(
-              '© 2025 Meu Site',
-              style: TextStyle(fontSize: 16.0),
-            ),
           ),
         ),
       ),
+    )
     );
   }
 }
