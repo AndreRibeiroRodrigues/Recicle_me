@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:recicle_me/scr/LoginPage.dart';
 import 'package:recicle_me/scr/homePage.dart';
 import 'package:recicle_me/scr/rewardPage.dart';
+import 'package:recicle_me/scr/textFirebase.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -11,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
-      initialRoute: '/login',
+      initialRoute: '/test',
       routes: {
         '/': (context) => Homepage(),
         '/login': (context) => LoginPage(),
-        '/RewardPage': (context) => Rewardpage()
+        '/RewardPage': (context) => Rewardpage(),
+        '/test': (context) => TestFirebase(),
       },
     ); 
   }
