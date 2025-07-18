@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recicle_me/classes/PontosDoc.dart';
 import 'package:recicle_me/components/AppbarSimple.dart';
 
 class TestFirebase extends StatelessWidget {
@@ -8,9 +9,13 @@ class TestFirebase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBarSimple(context, 'test'),
-      body:Padding(
+      body: Padding(
         padding: EdgeInsetsGeometry.all(10),
-        child: ListView.builder(itemBuilder: itemBuilder),)
+        child: FutureBuilder<List<PontosDoc>>(
+          future: BuscarRegistro(),
+          builder: builder,
+        ),
+      ),
     );
   }
 }
